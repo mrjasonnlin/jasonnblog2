@@ -6,7 +6,7 @@ from django.contrib.auth.models import User
 
 
 class UserProfile(models.Model):
-    user = models.OneToOneField(User, related_name='profile')
+    user = models.OneToOneField(User, related_name='profile', on_delete=models.CASCADE)
     fullName = models.CharField(max_length=128)
     website = models.URLField(blank=True, null=True)
     address = models.CharField(max_length=128, blank=True, null=True)

@@ -16,8 +16,8 @@ class Article(models.Model):
 
    
 class Comment(models.Model):
-    article = models.ForeignKey(Article)
-    user = models.ForeignKey(User)
+    article = models.ForeignKey(Article, on_delete=models.CASCADE)
+    user = models.ForeignKey(User, on_delete=models.CASCADE)
     content = models.CharField(max_length=128)
     pubDateTime = models.DateTimeField(auto_now_add=True)
 
